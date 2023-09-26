@@ -24,7 +24,7 @@ Pull from Docker Hub / 从 Docker Hub 下载镜像:
 docker pull dingjunyao/qexo_aio:latest
 ```
 
-or pull from Docker Hub / 或者是从 Github Packages 下载镜像:
+or pull from Docker Hub / 或者是从 GitHub Packages 下载镜像:
 
 ```bash
 docker pull ghcr.io/dingjunyao/qexo_aio:latest
