@@ -30,7 +30,7 @@ or pull from Docker Hub / 或者是从 Github Packages 下载镜像:
 docker pull ghcr.io/dingjunyao/qexo_aio:latest
 ```
 
-Or build from source / 或者从源码构建:
+or build from source / 或者从源码构建:
 
 ```bash
 bash build.sh
@@ -55,7 +55,7 @@ docker run \
     dingjunyao/qexo_aio:latest
 ```
 
-Run by Docker Compose / 以 Docker Compose 配置文件运行:
+or run by Docker Compose / 以 Docker Compose 配置文件运行:
 
 ```yaml
 version: "3.9"
