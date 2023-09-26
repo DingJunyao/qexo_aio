@@ -21,7 +21,13 @@ This repo is only for building, go to <https://github.com/Qexo/Qexo/blob/dev/Doc
 Pull from Docker Hub / 从 Docker Hub 下载镜像:
 
 ```bash
-docker pull dingjunyao/qexo_aio
+docker pull dingjunyao/qexo_aio:latest
+```
+
+or pull from Docker Hub / 或者是从 Github Packages 下载镜像:
+
+```bash
+docker pull ghcr.io/dingjunyao/qexo_aio:latest
 ```
 
 Or build from source / 或者从源码构建:
@@ -32,15 +38,37 @@ bash build.sh
 
 ## Run / 运行
 
+The following shows examples of image from Docker Hub. Please replace strings in the code with your own configuration cases.
+
+以下展示使用 Docker Hub 的镜像的示例。请将代码中的一些字符串替换为你自己的配置情况。
+
+Run by docker command / 以 docker 命令行方式运行:
+
 ```bash
 docker run \
     -d \
     --name qexo \
-    -v /your/hexo/path:/blog \
-    -v /your/qexo/db/path:/db \
-    -p hexo_port:3000 \
-    -p qexo_port:8000 \
-    dingjunyao/qexo_aio
+    -v /YOUR/HEXO/PATH:/blog \
+    -v /YOUR/QEXO/DB/PATH:/db \
+    -p HEXO_PORT:3000 \
+    -p QEXO_PORT:8000 \
+    dingjunyao/qexo_aio:latest
+```
+
+Run by Docker Compose / 以 Docker Compose 配置文件运行:
+
+```yaml
+version: "3.9"
+services:
+  web:
+    image: dingjunyao/qexo_aio:latest
+    volumes:
+      - /YOUR/HEXO/PATH:/blog
+      - /YOUR/QEXO/DB/PATH:/db
+    ports:
+      - HEXO_PORT:3000
+      - QEXO_PORT:8000
+    restart: unless-stopped
 ```
 
 Default Hexo static page server port is `3000`, while that of Qexo is `8000`.
